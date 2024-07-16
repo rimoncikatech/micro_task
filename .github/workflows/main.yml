@@ -67,8 +67,8 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def-service-a.outputs.task-definition }}
-          service: ${{ secrets.ECS_SERVICE_A }}
-          cluster: ${{ secrets.ECS_CLUSTER }}
+          service: service-a
+          cluster: MicroCluster
           wait-for-service-stability: true
 
       - name: Deploy Amazon ECS task definition for Service B
