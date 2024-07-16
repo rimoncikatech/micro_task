@@ -63,10 +63,14 @@ jobs:
           container-name: service-b
           image: ${{ steps.build-image-service-b.outputs.image }}
 
-      - name: Deploy Amazon ECS task definition
+      - name:  Check task definition output for Service A
+        run: |
+          echo "Task definition for Service A: ${{ steps.task-def-service-a.outputs.task-definition }}"
+
+      - name: Deploy Amazon ECS task definition for Service A
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          task-definition: ${{ steps.task-def-service-a.outputs.task-definition }}
           service: ${{ secrets.ECS_SERVICE_A }}
           cluster: ${{ secrets.ECS_CLUSTER }}
           wait-for-service-stability: true
