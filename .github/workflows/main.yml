@@ -68,7 +68,7 @@ jobs:
           echo "Task definition for Service A: ${{ steps.task-def-service-a.outputs.task-definition }}"
 
       - name: Deploy Amazon ECS task definition for Service A
-        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        uses: aws-actions/amazon-ecs-deploy-task-definition@df9643053eda01f169e64a0e60233aacca83799a
         with:
           task-definition: ${{ steps.task-def-service-a.outputs.task-definition }}
           service: ${{ secrets.ECS_SERVICE_A }}
