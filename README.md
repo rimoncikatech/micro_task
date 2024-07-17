@@ -9,10 +9,6 @@ GitHub Actions for automated deployments.
 
 
 
-Create EKS cluster with NodeGroup (2 nodes of t2.medium instance type)
-Create EC2 Instance t2.micro (Optional)
-
-
 
 ##IAM role for ec2	
 ```
@@ -168,11 +164,14 @@ resource "aws_route_table_association" "private_2" {
 ![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.png?raw=true)
 
 
+## Load Balancer For ECS
+
+![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.png?raw=true)
+
 
 ##Dockerfile
 
 
-##IAM role for ec2	
 ```
 FROM --platform=linux/amd64 node:14
 
