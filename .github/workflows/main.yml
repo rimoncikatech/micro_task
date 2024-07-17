@@ -41,7 +41,7 @@ jobs:
           IMAGE_TAG: latest
           REPOSITORY: service-b
         run: |
-          cd service-a
+          cd service-b
           docker buildx create --use
           docker buildx build --platform linux/amd64 -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG --push .
 
