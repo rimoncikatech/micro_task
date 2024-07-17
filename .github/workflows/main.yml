@@ -41,20 +41,11 @@ jobs:
           IMAGE_TAG: latest
           REPOSITORY: service-b
         run: |
-          cd service-b
-          docker build -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG
-          echo "image=$ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+          cd service-a
+          docker buildx create --use
+          docker buildx build --platform linux/amd64 -t $ECR_REGISTRY/$REPOSITORY:$IMAGE_TAG --push .
 
 
-
-      - name: Fill in the new image ID in the Amazon ECS task definition for Service B
-        id: task-def-service-b
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: service-b/micro-cluster-task-gain-service-b.json
-          container-name: service-b
-          image: ${{ steps.build-image-service-b.outputs.image }}
 
       - name:  Check task definition output for Service A
         run: |
@@ -67,3 +58,18 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: "ap-northeast-1"
+
+
+
+      - name:  Check task definition output for Service B
+        run: |
+          echo "Task definition for Service B: ${{ steps.task-def-service-a.outputs.task-definition }}"
+      - name: Deploy to ECS
+        uses: imehedi/actions-awscli-v2@latest
+        with:
+          args: ecs update-service --cluster MicroCluster --service service-b --force-new-deployment
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: "ap-northeast-1"
+
