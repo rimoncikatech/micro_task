@@ -166,7 +166,7 @@ resource "aws_route_table_association" "private_2" {
 
 ## Load Balancer For ECS
 
-![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.png?raw=true)
+![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.46.54%E2%80%AFPM.png?raw=true)
 
 
 ##Dockerfile
