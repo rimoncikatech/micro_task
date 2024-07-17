@@ -1,0 +1,11 @@
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+
+# Ignore Terraform provider plugins
+.terraform/
+
+
+# Ignore plan output files
+*.tfplan
