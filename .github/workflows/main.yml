@@ -63,7 +63,7 @@ jobs:
 
       - name:  Check task definition output for Service B
         run: |
-          echo "Task definition for Service B: ${{ steps.task-def-service-a.outputs.task-definition }}"
+          echo "Task definition for Service B: ${{ steps.task-def-service-b.outputs.task-definition }}"
       - name: Deploy to ECS
         uses: imehedi/actions-awscli-v2@latest
         with:
