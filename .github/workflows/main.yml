@@ -61,15 +61,21 @@ jobs:
 
 
 
-      - name:  Check task definition output for Service B
-        run: |
-          echo "Task definition for Service B: ${{ steps.task-def-service-b.outputs.task-definition }}"
-      - name: Deploy to ECS
-        uses: imehedi/actions-awscli-v2@latest
+ ##     - name:  Check task definition output for Service B
+   ##     run: |
+     #     echo "Task definition for Service B: ${{ steps.task-def-service-b.outputs.task-definition }}"
+     ## - name: Deploy to ECS
+       ## uses: imehedi/actions-awscli-v2@latest
+        ##with:
+          ##args: ecs update-service --cluster MicroCluster --service service-b --force-new-deployment
+        ##env:
+          ##AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          ##AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ##AWS_DEFAULT_REGION: "ap-northeast-1"
+      - name: Deploy Amazon ECS task definition for Service B
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          args: ecs update-service --cluster MicroCluster --service service-b --force-new-deployment
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: "ap-northeast-1"
-
+          task-definition: ${{ steps.task-def-service-b.outputs.task-definition }}
+          service: ${{ secrets.ECS_SERVICE_B }}
+          cluster: ${{ secrets.ECS_CLUSTER }}
+          wait-for-service-stability: true
