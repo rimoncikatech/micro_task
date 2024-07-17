@@ -35,7 +35,7 @@ Create EC2 Instance t2.micro (Optional)
 }
 ```
 
-VPC and Networking:
+##VPC and Networking:
 ```
 provider "aws" {
   region = "us-west-2"
@@ -165,9 +165,31 @@ resource "aws_route_table_association" "private_2" {
 
 #ECS Service: 
 
-![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.pngraw=true)
+![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.png?raw=true)
 
-GitHub Actions CI/CD :
+
+
+##Dockerfile
+
+
+##IAM role for ec2	
+```
+FROM --platform=linux/amd64 node:14
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "index.js"]
+```
+
+#GitHub Actions CI/CD :
 ```
 name: CICD
 
