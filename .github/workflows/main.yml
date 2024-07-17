@@ -51,7 +51,7 @@ jobs:
         id: task-def-service-a
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: micro-cluster-task-gain.json
+          task-definition: service-a/micro-cluster-task-gain.json
           container-name: service-a
           image: ${{ steps.build-image-service-a.outputs.image }}
 
@@ -59,7 +59,7 @@ jobs:
         id: task-def-service-b
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition: micro-cluster-task-gain-service-b.json
+          task-definition: service-b/micro-cluster-task-gain-service-b.json
           container-name: service-b
           image: ${{ steps.build-image-service-b.outputs.image }}
 
