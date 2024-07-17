@@ -158,8 +158,14 @@ resource "aws_route_table_association" "private_2" {
 
 ```
 
+#ECR 
+
+![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.25%E2%80%AFPM.png?raw=true)
 
 
+#ECS Service: 
+
+![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.pngraw=true)
 
 GitHub Actions CI/CD :
 ```
