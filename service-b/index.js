@@ -18,6 +18,11 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.get('/health', (req, res) => {
+    res.json({ status: 'UP' });
+});
+
+
 app.listen(port, () => {
   console.log(`Service B listening at http://localhost:${port}`);
 });
