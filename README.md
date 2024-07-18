@@ -7,8 +7,19 @@ GitHub Actions for automated deployments.
 
 
 
+## PROJECT URL: <br /> 
+
+#Service-a  
+
+DNS: http://service-load-balancer-1748656751.ap-northeast-1.elb.amazonaws.com/
+ 
+#Health Endpoint: http://service-load-balancer-1748656751.ap-northeast-1.elb.amazonaws.com/health
 
 
+#Service-b
+
+DNS: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/
+Helath Endpoint: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/health
 
 ##IAM role for ec2	
 ```
