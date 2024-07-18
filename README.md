@@ -22,6 +22,8 @@ GitHub Actions for automated deployments.
 
 #Helath Endpoint: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/health <br />
 
+<br /> <br /> 
+
 ##IAM role for ec2	
 ```
 {
@@ -166,12 +168,21 @@ resource "aws_route_table_association" "private_2" {
 
 ```
 
-#ECR 
+## Terraform  Command: 
+
+```
+terraform int
+terrafom plan
+terraform apply
+```
+
+
+## ECR 
 
 ![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.25%E2%80%AFPM.png?raw=true)
 
 
-#ECS Service: 
+## ECS Service: 
 
 ![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.36.44%E2%80%AFPM.png?raw=true)
 
@@ -181,7 +192,7 @@ resource "aws_route_table_association" "private_2" {
 ![alt text](https://github.com/rimoncikatech/micro_task/blob/main/images/Screenshot%202024-07-17%20at%208.46.54%E2%80%AFPM.png?raw=true)
 
 
-##Dockerfile
+## Dockerfile
 
 
 ```
@@ -280,8 +291,4 @@ jobs:
 ```
 
 
-```
 
-## **Summary**
-
-In this Project, you learnt how to deploy a cloud native application into EKS. Once deployed and up and running, you used your local workstation's browser to test out the application. You later confirmed that your activity within the application generated data which was captured and recorded successfully within the MongoDB ReplicaSet back end within the cluster.
