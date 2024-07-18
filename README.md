@@ -11,15 +11,16 @@ GitHub Actions for automated deployments.
 
 #Service-a  
 
-DNS: http://service-load-balancer-1748656751.ap-northeast-1.elb.amazonaws.com/
+#DNS: http://service-load-balancer-1748656751.ap-northeast-1.elb.amazonaws.com/  <br />
  
-#Health Endpoint: http://service-load-balancer-1748656751.ap-northeast-1.elb.amazonaws.com/health
+#Health Endpoint: http://service-load-balancer-1748656751.ap-northeast-1.elb.amazonaws.com/health  <br />
 
 
 #Service-b
 
-DNS: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/
-Helath Endpoint: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/health
+#DNS: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/ <br />
+
+#Helath Endpoint: http://service-b-load-balancer-16647868.ap-northeast-1.elb.amazonaws.com/health <br />
 
 ##IAM role for ec2	
 ```
