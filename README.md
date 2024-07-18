@@ -24,7 +24,7 @@ GitHub Actions for automated deployments.
 
 <br /> <br /> 
 
-##IAM role for ec2	
+## IAM role for ec2	
 ```
 {
     "Version": "2012-10-17",
@@ -45,7 +45,7 @@ GitHub Actions for automated deployments.
 }
 ```
 
-##VPC and Networking:
+## VPC and Networking:
 ```
 provider "aws" {
   region = "us-west-2"
