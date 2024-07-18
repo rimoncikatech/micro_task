@@ -170,10 +170,24 @@ resource "aws_route_table_association" "private_2" {
 
 ## Terraform  Command: 
 
+To create the VPC, 
+* Export AWS credentials into environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Apply Terraform configuration:
+
+
 ```
 terraform int
 terrafom plan
 terraform apply
+```
+
+## Deleting the VPC
+
+To delete the VPC, 
+* Export AWS credentials into environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+* Destroy Terraform configuration:
+```bash
+terraform destroy 
 ```
 
 
@@ -211,7 +225,8 @@ EXPOSE 3000
 CMD ["node", "index.js"]
 ```
 
-#GitHub Actions CI/CD :
+## GitHub Actions CI/CD :
+
 ```
 name: CICD
 
